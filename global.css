@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1C1D1E;
+    color: rgb(192, 192, 192);
+    display:contents;
+}
+/* ======= NAVBAR STYLES ======= */
+.navbar-main {
+    display: flex;
+}
+/* Navbar Logo Style*/
+.navbar-logo {
+    align-items: center;
+    padding-top: 30px;
+}
+/* Navbar Text Styles*/
+.navbar-text {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap:0px;
+}
+/* Navbar File Name Box */
+.navbar-file-name {
+    cursor: pointer;
+    margin:0px 9px;
+    padding: 0px;
+}
+.navbar-file-name-text{
+    font-size: 25px;
+    margin:0px;
+    padding: 0px;
+}
+/* Navbar Links Box */
+.navbar-links {
+    display: flex;
+    gap: 10px;
+    font-size: 10px;
+    margin:7px 0px;
+    padding: 0px;
+}
+.navbar-separator{
+    padding:3px 10px;
+    border-radius: 8px;
+    margin: 0px;
+}
+.navbar-separator:hover{
+    background-color: #111213;
+}
+.navbar-link-text{
+    font-size: 17px;
+    margin:0px;
+    padding: 0px;
+}
