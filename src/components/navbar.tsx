@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <div className="navbar-main">
         <div className="navbar-logo">
-            <Network size={32} color="#4A90E2" />
+            <Network className="navbar-logo-icon" />
         </div>
         <div className="navbar-text">
             <div className="navbar-file-name">

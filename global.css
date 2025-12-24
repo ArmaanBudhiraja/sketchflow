@@ -1,19 +1,33 @@
 body{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
     background-color: #1C1D1E;
     color: rgb(192, 192, 192);
     display:contents;
 }
 /* ======= NAVBAR STYLES ======= */
 .navbar-main {
-    display: flex;
+    display: inline-flex;
+    font-family: Geneva, Verdana, sans-serif;
 }
 /* Navbar Logo Style*/
 .navbar-logo {
     align-items: center;
-    padding-top: 30px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color: rgb(118, 179, 239);
+    height:50px;
+    border-radius: 4px;
+}
+.navbar-logo-icon{
+    width: 40px;
+    height: 40px;
+    margin: 0px;
+    padding-top: 4px;
+    padding: 4px 5px;
+    color: rgb(255, 255, 255);
 }
 /* Navbar Text Styles*/
 .navbar-text {
@@ -43,11 +57,12 @@ body{
 }
 .navbar-separator{
     padding:3px 10px;
-    border-radius: 8px;
+    border-radius: 5px;
     margin: 0px;
 }
 .navbar-separator:hover{
-    background-color: #111213;
+    background-color: #11121370;
+    cursor:default;
 }
 .navbar-link-text{
     font-size: 17px;
