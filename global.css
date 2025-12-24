@@ -18,12 +18,12 @@ body{
     margin-bottom: 0px;
     padding-bottom: 0px;
     background-color: rgb(118, 179, 239);
-    height:50px;
+    height:40px;
     border-radius: 4px;
 }
 .navbar-logo-icon{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     margin: 0px;
     padding-top: 4px;
     padding: 4px 5px;
@@ -32,6 +32,7 @@ body{
 /* Navbar Text Styles*/
 .navbar-text {
     margin: 10px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: column;
     gap:0px;
@@ -43,7 +44,7 @@ body{
     padding: 0px;
 }
 .navbar-file-name-text{
-    font-size: 25px;
+    font-size: 20px;
     margin:0px;
     padding: 0px;
 }
@@ -51,8 +52,8 @@ body{
 .navbar-links {
     display: flex;
     gap: 10px;
-    font-size: 10px;
-    margin:7px 0px;
+    font-size: 5px;
+    margin:4px 0px;
     padding: 0px;
 }
 .navbar-separator{
@@ -65,7 +66,14 @@ body{
     cursor:default;
 }
 .navbar-link-text{
-    font-size: 17px;
+    font-size: 15px;
     margin:0px;
+    padding: 0px;
+}
+
+/* ======= LINE STYLES ======= */
+.divider-line {
+    border-top: 1px solid #333435;
+    margin: 0px;
     padding: 0px;
 }

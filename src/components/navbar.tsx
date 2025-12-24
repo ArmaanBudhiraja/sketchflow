@@ -1,15 +1,11 @@
 import "../../global.css";
 import { Network } from "lucide-react"; 
 import { useState } from "react";
+import ChangeName from "./ui/changeName";
 
 const Navbar = () => {
     const [fileName, setFileName] = useState("Untitled");
-    const handleFileNameChange = () => {
-        const newFileName = prompt("Enter new file name:", fileName);
-        if (newFileName) {
-            setFileName(newFileName);
-        }
-    };
+  const [isEditing, setIsEditing] = useState(false);
   return (
     <div className="navbar-main">
         <div className="navbar-logo">
@@ -17,7 +13,23 @@ const Navbar = () => {
         </div>
         <div className="navbar-text">
             <div className="navbar-file-name">
-                <h1 onClick={() => handleFileNameChange()} className="navbar-file-name-text">{fileName}</h1>
+                {isEditing ? (
+                    <ChangeName
+                    initialValue={fileName}
+                    onConfirm={(newName) => {
+                        setFileName(newName);
+                        setIsEditing(false);
+                    }}
+                    onCancel={() => setIsEditing(false)}
+                    />
+                ) : (
+                    <h1
+                    className="navbar-file-name-text"
+                    onClick={() => setIsEditing(true)}
+                    >
+                    {fileName}
+                    </h1>
+                )}
             </div>
             <div className="navbar-links">
                 <div className="navbar-separator" >
