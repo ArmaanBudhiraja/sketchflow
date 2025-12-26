@@ -5,7 +5,6 @@ const Page = () => {
   return (
     <div>
       <Navbar />
-      <hr className="divider-line" />
     </div>
   );
 };
