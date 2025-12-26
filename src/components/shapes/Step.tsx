@@ -9,6 +9,6 @@ export const Step = ({ size = 24 }) => (
     strokeLinecap="round"
     strokeLinejoin="round"
   >
-    <rect x="4" y="7" width="16" height="10" />
+    <polygon points="4 6 16 6 20 12 16 18 4 18 8 12" />
   </svg>
 );

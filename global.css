@@ -419,3 +419,23 @@ body{
     margin-left: 20px;
     transition: 0.5ms ease-in-out;
 }
+.shape-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 👈 5 in one line */
+  gap: 3px;
+  margin-left: 20px;
+}
+
+.shape-item {
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.05s ease;
+}
+
+.shape-item:hover {
+  background: #0c0c0cc3;
+}

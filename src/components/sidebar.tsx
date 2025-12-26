@@ -1,6 +1,6 @@
 import {Search, ChevronDown, ChevronRightIcon} from "lucide-react"
 import { useState } from "react";
-import { Rectangle } from "./shapes/Rectangle";
+import { SHAPES } from "./shapes/General";
 
 const Sidebar = () => {
     const[isGeneralOpen, setIsGeneralOpen] = useState(false);
@@ -28,9 +28,12 @@ const Sidebar = () => {
                     <span className="folder-title">General</span>
                 </div>
                 {isGeneralOpen && (
-                    <div className="folder-contents">
-                        <Rectangle size={20}/>
-                        <div className="file-item">GettingStarted.md</div>
+                    <div className="shape-grid">
+                        {SHAPES.map(({ name, Component }) => (
+                            <div key={name} title={name} className="shape-item">
+                                <Component size={24} />
+                            </div>
+                        ))}
                     </div>
                 )}
             </div>
