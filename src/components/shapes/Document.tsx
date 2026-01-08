@@ -6,10 +6,14 @@ export const Document = ({ size = 24 }) => (
     fill="none"
     stroke="currentColor"
     strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
   >
-    <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
-    <path d="M14 2v6h6" />
+    <path d="
+      M4 6
+      c7 0 0 0 16 0
+      v8
+      c-4 -4 -12 6 -16 0
+      z
+    " />
   </svg>
+
 );

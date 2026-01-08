@@ -2,8 +2,14 @@ import "../../global.css";
 import { Network, Sidebar, ZoomIn, ZoomOut, Undo2, Redo2, Trash2, Plus, Shapes, Table } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import RenameDialog from "./ui/renameDialog";
-
-const Navbar = () => {
+type NavbarProps = {
+  scale: number;
+  onZoomIn: () => void;
+  onZoomOut: () => void;
+  onZoomChange: (value: number) => void;
+  onResetView: () => void;
+};
+const Navbar = ({ scale, onZoomIn, onZoomOut, onZoomChange, onResetView}: NavbarProps) => {
   const [fileName, setFileName] = useState("Untitled");
   const [showRename, setShowRename] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -98,9 +104,9 @@ const Navbar = () => {
                 </div>
                 {activeMenu === "View" && (
                     <div className="dropdown-menu">
-                        <button>Reset View</button>
-                        <button>Zoom In</button>
-                        <button>Zoom Out</button>
+                        <button onClick={onResetView}>Reset View</button>
+                        <button onClick={onZoomIn}>Zoom In</button>
+                        <button onClick={onZoomOut}>Zoom Out</button>
                         <hr className="divider-line"/>
                         <button>Fullscreen</button>
                     </div>
@@ -133,21 +139,21 @@ const Navbar = () => {
             </div>
             <hr className="divider-line" id="divider-line-vertical" />
             <div className="zoom-level-wrapper">
-                <select className="zoom-level-dropdown">
-                    <option>50%</option>
-                    <option>75%</option>
-                    <option selected>100%</option>
-                    <option>125%</option>
-                    <option>150%</option>
-                    <option>200%</option>
+                <select className="zoom-level-dropdown" value={`${scale * 100}%`} onChange={(e) =>onZoomChange(parseInt(e.target.value) / 100)}>
+                    <option value="50%">50%</option>
+                    <option value="75%">75%</option>
+                    <option value="100%" selected>100%</option>
+                    <option value="125%">125%</option>
+                    <option value="150%">150%</option>
+                    <option value="200%">200%</option>
                 </select>
             </div>
             <hr className="divider-line" id="divider-line-vertical" />
             <div className="zoom-buttons">
-                <div className="zoom-in-wrapper">
+                <div className="zoom-in-wrapper" onClick={onZoomIn}>
                     <ZoomIn className="zoom-in-icon" />
                 </div>
-                <div className="zoom-out-wrapper">
+                <div className="zoom-out-wrapper" onClick={onZoomOut}>
                     <ZoomOut className="zoom-out-icon" />
                 </div>
             </div>

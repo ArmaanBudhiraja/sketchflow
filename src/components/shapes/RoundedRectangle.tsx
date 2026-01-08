@@ -1,4 +1,4 @@
-export const RoundedRectangle = ({ size = 24, radius = 6 }) => (
+export const RoundedRectangle = ({ size = 24, radius = 4 }) => (
   <svg
     width={size}
     height={size}

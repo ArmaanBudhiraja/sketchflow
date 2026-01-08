@@ -5,6 +5,9 @@ body{
     color: rgb(192, 192, 192);
     display:contents;
 }
+.page-center{
+    display: flex;
+}
 /* ======= NAVBAR STYLES ======= */
 .navbar-main {
     display: inline-flex;
@@ -349,13 +352,17 @@ body{
 .sidebar{
     width: 250px;
     background: transparent;
-    border-right: 1px solid #393a3b;
-    height: 100vh;
+    height: 100%;
     padding: 10px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+.sidebar-divider-line{
+    padding:0px;
+    margin: 0px;
+    border: 0.5px solid #393a3b;
 }
 .search-bar {
   position: relative;
@@ -439,3 +446,76 @@ body{
 .shape-item:hover {
   background: #0c0c0cc3;
 }
+
+
+
+.board-layout {
+  display: flex;
+  height: 100vh;
+  background: #0b0b0b;
+  color: white;
+}
+
+/*============= BOARD STYLES ===============*/
+
+.board-main{
+    width: 100vw;
+    height: 87.9vh;
+    overflow: hidden;
+    background-color: #0b0b0b;
+    position: relative; 
+}
+
+.board-container:active {
+  cursor: grabbing;
+}
+.board-inside {
+  position: absolute;
+  inset: -2000px;          /* infinite feel */
+  background-color: #0b0b0b;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+
+  background-size:
+    var(--small-grid) var(--small-grid),
+    var(--small-grid) var(--small-grid),
+    var(--large-grid) var(--large-grid),
+    var(--large-grid) var(--large-grid);
+}
+
+.grid-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;              /* ⬅ stays behind rulers */
+  cursor: grab;
+}
+
+.grid-layer:active {
+  cursor: grabbing;
+}
+
+.nodes-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* above grid, below rulers */
+  pointer-events: none;
+}
+
+.node {
+  position: absolute;
+  transform-origin: top left;
+  cursor: grab;
+  background: transparent;
+  border: none;
+  pointer-events: auto; /* ✅ MUST BE AUTO */
+}
+
+.node:active {
+  cursor: grabbing;
+}
+
+

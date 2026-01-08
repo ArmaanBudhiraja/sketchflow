@@ -30,7 +30,7 @@ const Sidebar = () => {
                 {isGeneralOpen && (
                     <div className="shape-grid">
                         {SHAPES.map(({ name, Component }) => (
-                            <div key={name} title={name} className="shape-item">
+                            <div key={name} title={name} className="shape-item" draggable onDragStart={(e) => {e.dataTransfer.setData("shape/type", name); }}>
                                 <Component size={24} />
                             </div>
                         ))}
